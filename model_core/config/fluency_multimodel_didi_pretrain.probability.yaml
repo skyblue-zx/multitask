@@ -1,0 +1,54 @@
+# 实例名称
+# 用来命名日志和模型参数文件
+instance_name: fluency_multimodel_didi
+
+# GPU配置
+use_cuda: true
+
+# 日志配置
+log_level: INFO
+
+cache: true
+temp_dir: /home/work/wav_temp_dir
+
+# 训练数据集配置
+train_dataset_path: /Users/zhaixiao/labeled_data/7763_eng_audio_fluency_20000_outsourcing/asr_model_sample_5_train_asr_label_1379.csv
+train_audio_dir: /Users/zhaixiao/labeled_data/7763_eng_audio_fluency_20000_outsourcing/media_files_5
+# 评估数据集配置
+eval_dataset_path: /dataset/flu_meta_data/V0_1_1379/fluency_exp_meta_data/asr_model_sample_5_eval.csv
+eval_audio_dir: /dataset/flu_audio_data/V1_0_consistence_5/fluency_exp_audio_data
+# 预测数据集配置
+predict_dataset_path: /Users/zhaixiao/labeled_data/7763_eng_audio_fluency_20000_outsourcing/asr_model_sample_5_eval.csv
+predict_audio_path: /Users/zhaixiao/labeled_data/7763_eng_audio_fluency_20000_outsourcing/media_files_5
+predict_result_save_path: /Users/zhaixiao/test.dat
+
+# 模型训练配置
+lr: 0.001
+epochs: 20
+train_batch_size: 2
+train_num_workers: 0
+train_shuffle: true
+gradient_accumulation_steps: 1
+
+# 模型评估配置
+eval_batch_size: 15
+eval_num_workers: 4
+eval_shuffle: true
+
+# 模型预测配置
+predict_batch_size: 3
+predict_num_workers: 1
+
+# 其他个性化配置
+audio_pretrain_model: /home/work/fluency_model/tal_model_train_and_predict_env/model_core/src/models/pytorch_vggish.pth
+# Bert预训练模型名称
+text_pretrain_model: bert-base-uncased
+# Bert模型序列最大长度
+max_seq_len: 100
+# Bert分类模型类别数
+num_labels: 2
+
+# DiDi多模态融合模型配置
+didi_multimodel_config_file: didi_config.yaml
+didi_multimodel_vocabulary_dict: /Users/zhaixiao/workplace/python/tal_model_train_and_predict_env/model_core/src/models/.vector_cache
+didi_multimodel_audio_length: 30000

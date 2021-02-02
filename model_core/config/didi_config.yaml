@@ -1,0 +1,24 @@
+audio_dim: 34
+text_dim: 300
+#embedding_path: /home/work/fluency_model/tal_model_train_and_predict_env/model_core/src/models/.vector_cache/glove.6B.300d.txt.npy
+embedding_path:
+
+# 字典大小
+vocabulary_size: 400000
+
+#
+audio_hidden: 100
+#
+text_hidden: 100
+#
+hidden_size: 200
+# 多头Attention的head个数
+num_attention_heads: 5
+# Dropout概率
+attention_probs_dropout_prob: 0
+
+#
+mm_hidden: 100
+
+# 分类个数
+class_num: 2
